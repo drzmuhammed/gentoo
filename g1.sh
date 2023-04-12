@@ -23,8 +23,6 @@ ntpd -q -g
 cd /mnt/gentoo 
 wget https://github.com/drzmuhammed/gentoo/blob/main/g2.sh
 wget https://github.com/drzmuhammed/gentoo/blob/main/g3.sh
-chmod +x g2.sh
-chmod +x g3.sh
 wget https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20230409T163155Z/stage3-amd64-openrc-20230409T163155Z.tar.xz 
 tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner 
 sed -i '/COMMON_FLAGS="-O2 -pipe"/c\COMMON_FLAGS="-mtune=skylake -O2 -pipe"' /mnt/gentoo/etc/portage/make.conf 
@@ -40,4 +38,3 @@ mount --rbind /dev /mnt/gentoo/dev
 mount --make-rslave /mnt/gentoo/dev 
 mount --bind /run /mnt/gentoo/run 
 mount --make-slave /mnt/gentoo/run 
-chroot /mnt/gentoo /bin/bash   
