@@ -21,10 +21,8 @@ mkfs.ext4 /dev/vda2
 mount /dev/vda2 /mnt/gentoo 
 ntpd -q -g 
 cd /mnt/gentoo 
-wget https://github.com/drzmuhammed/gentoo/blob/main/g1.sh
 wget https://github.com/drzmuhammed/gentoo/blob/main/g2.sh
 wget https://github.com/drzmuhammed/gentoo/blob/main/g3.sh
-wget https://github.com/drzmuhammed/gentoo/blob/main/g4.sh
 wget https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20230409T163155Z/stage3-amd64-openrc-20230409T163155Z.tar.xz 
 tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner 
 sed -i '/COMMON_FLAGS="-O2 -pipe"/c\COMMON_FLAGS="-mtune=skylake -O2 -pipe"' /mnt/gentoo/etc/portage/make.conf 
