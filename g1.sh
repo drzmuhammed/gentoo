@@ -21,6 +21,7 @@ mkfs.ext4 /dev/vda2
 mount /dev/vda2 /mnt/gentoo 
 ntpd -q -g 
 cd /mnt/gentoo 
+wget https://cdn.githubraw.com/drzmuhammed/gentoo/main/g1.sh
 wget https://cdn.githubraw.com/drzmuhammed/gentoo/main/g2.sh
 wget https://cdn.githubraw.com/drzmuhammed/gentoo/main/g3.sh
 wget https://cdn.githubraw.com/drzmuhammed/gentoo/main/g4.sh
@@ -38,4 +39,5 @@ mount --make-rslave /mnt/gentoo/sys
 mount --rbind /dev /mnt/gentoo/dev 
 mount --make-rslave /mnt/gentoo/dev 
 mount --bind /run /mnt/gentoo/run 
-mount --make-slave /mnt/gentoo/run 
+mount --make-slave /mnt/gentoo/run
+exit 

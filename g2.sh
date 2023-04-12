@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /mnt/gentoo 
 mount /dev/vda1 /boot 
 emerge-webrsync 
 emerge --sync 
@@ -13,3 +14,4 @@ echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen 
 echo "LANG="en_US.UTF-8"" >> /etc/env.d/02locale 
 echo "LC_COLLATE="C.UTF-8"" >> /etc/env.d/02locale 
+exit
