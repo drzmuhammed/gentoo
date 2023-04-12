@@ -21,6 +21,7 @@ mkfs.ext4 /dev/vda2 &&
 mount /dev/vda2 /mnt/gentoo &&
 ntpd -q -g &&
 cd /mnt/gentoo &&
+wget https://github.com/drzmuhammed/gentoo/blob/main/g.sh
 wget https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20230409T163155Z/stage3-amd64-openrc-20230409T163155Z.tar.xz &&
 tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner &&
 
